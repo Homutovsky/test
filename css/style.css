@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 800px;
+  padding: 90px 67px 59px 68px;
+  background-color: #F4F5FC;
+}
+
+.side__block {
+  max-width: 137.2px;
+  width: 100%;
+  background-color: #5A61ED;
+}
+
+.side__block--text {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-size: 49px;
+  line-height: 63px;
+  letter-spacing: 0.5px;
+  color: #fff;
+  transform: rotate(-90deg);
+  height: 480px;
+}/*# sourceMappingURL=style.css.map */
