@@ -13,7 +13,7 @@
 
 .container {
   max-width: vw(800);
-  padding: vw(90) vw(67) vw(59) vw(68);
+  padding: vw(60) vw(67) vw(59) vw(68);
   background-color: #F4F5FC;
   margin: 0 auto;
   display: flex;
@@ -97,13 +97,17 @@
 }
 
 .select-css {
+  display: flex;
+  vertical-align: middle;
   border: none;
   max-width: vw(56);
   width: 100%;
-  display: block;
   appearance: none;
   background-image: url('../image/select-arrow.svg');
   background-repeat: no-repeat, repeat;
-  background-position: right .7em top 50%, 0 0;
+  background-position: right top 50%, 0 0;
   background-size: .65em auto, 100%;
+  padding: vw(6.3) 0 vw(6.3) 0;
+  border-bottom: vw(0.7) solid #F2F2F2;
+  font-weight: 700;
 }
