@@ -66,11 +66,29 @@ const year = [
   },
   
 ]
-selectDays.addEventListener('click', () => {
-  let days = year[0].days;
-  for(let i = 0; i < days; i++) {
-    selectDays.remove(0)
+
+let selectedMonth = selectMonth.value ;
+
+const func = (sel) => {
+  if(sel.children.length) {
+    let options = sel.children;
+    options.forEach(element => {
+      element.remove()
+    });
   }
+}
+
+selectDays.addEventListener('click', () => {
+  func(selectDays);
+
+  // let arr = year.forEach(el =>  {
+  //   if(el === selectedMonth) {
+  //     console.log(el.days)
+  //   } else {
+  //     console.log(selectedMonth)
+  //   }
+  // })
+  // console.log('arr', arr)
 
   for (let i = 1; i <= year[0].days; i++) {
     const option = document.createElement('option')
@@ -80,21 +98,18 @@ selectDays.addEventListener('click', () => {
 })
 
 selectMonth.addEventListener('click', () => {
-  for(let i = 0; i < 12; i++) {
-    selectMonth.remove(0)
-  }
+  func(selectMonth);
 
   for (let i = 0; i < 12; i++) {
     const option = document.createElement('option')
       option.textContent = year[i].month
       selectMonth.add(option)
   }
+  
 })
 
 selectYears.addEventListener('click', () => {
-  for(let i = 0; i < 123; i++) {
-    selectYears.remove(0)
-  }
+  func(selectYears);
 
   for (let i = 0; i <= 123; i++) {
     const option = document.createElement('option')
