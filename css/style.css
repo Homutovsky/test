@@ -77,6 +77,12 @@
           justify-content: space-between;
 }
 
+.content__wrapper--wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .content__wrapper--blocks {
   max-width: 14.65625vw;
   width: 100%;
@@ -101,7 +107,7 @@
   padding-bottom: 0.39375vw;
 }
 
-.select-css {
+.select-days, .select-month, .select-years {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -119,5 +125,22 @@
   padding: 0.39375vw 0 0.39375vw 0;
   border-bottom: 0.04375vw solid #F2F2F2;
   font-weight: 700;
+}
+
+.select-days {
+  max-width: 3.5vw;
+  width: 100%;
+  margin-right: 0.6175vw;
+}
+
+.select-month {
+  max-width: 5.6875vw;
+  width: 100%;
+  margin-right: 0.6175vw;
+}
+
+.select-years {
+  max-width: 4.22938vw;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
