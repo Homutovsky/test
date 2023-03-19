@@ -69,47 +69,59 @@ const year = [
 
 let selectedMonth = selectMonth.value ;
 
-const func = (sel) => {
-  if(sel.children.length) {
-    let options = sel.children;
-    options.forEach(element => {
-      element.remove()
-    });
+const removeOptions = (selector) => {
+  selector.options.length = 0
+  
+}
+
+const setDays = (monthIndex = 0) => {
+  for (let i = 1; i <= year[monthIndex].days; i++) {
+    const option = document.createElement('option')
+      option.textContent = i;
+      option.value = i;
+      selectDays.add(option)
   }
 }
 
+const resetDays = (monthIndex) => {
+  removeOptions(selectDays)
+  setDays(monthIndex)
+}
+
 selectDays.addEventListener('click', () => {
-  func(selectDays);
-
-  // let arr = year.forEach(el =>  {
-  //   if(el === selectedMonth) {
-  //     console.log(el.days)
-  //   } else {
-  //     console.log(selectedMonth)
-  //   }
-  // })
-  // console.log('arr', arr)
-
-  for (let i = 1; i <= year[0].days; i++) {
-    const option = document.createElement('option')
-      option.textContent = i
-      selectDays.add(option)
+  if(selectDays.options.length) {
+    return
   }
+  removeOptions(selectDays);
+
+  setDays()
+})
+
+
+selectMonth.addEventListener('change', (event) => {
+  resetDays(event.target.value)
 })
 
 selectMonth.addEventListener('click', () => {
-  func(selectMonth);
+  if(selectMonth.options.length) {
+    return
+  }
+  removeOptions(selectMonth);
 
   for (let i = 0; i < 12; i++) {
     const option = document.createElement('option')
       option.textContent = year[i].month
+      option.value=i;
       selectMonth.add(option)
   }
   
 })
 
 selectYears.addEventListener('click', () => {
-  func(selectYears);
+  if(selectYears.options.length) {
+    return
+  }
+  removeOptions(selectYears);
 
   for (let i = 0; i <= 123; i++) {
     const option = document.createElement('option')
