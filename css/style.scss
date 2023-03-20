@@ -17,10 +17,6 @@
   margin: 0 auto;
   display: flex;
   background-color: #F4F5FC;
-  // background: url('../image/background.svg') #F4F5FC;
-  // background-repeat: no-repeat;
-  // background-position: left vw(358) top vw(126);
-
 }
 
 .side__block {
@@ -59,7 +55,7 @@
       display: block;
       background: url('../image/background.svg');
       background-repeat: no-repeat;
-      background-position: left vw(220) top vw(30);
+      background-position: right vw(0) bottom vw(0);
       position: absolute;
       top: 0;
       left: 0;

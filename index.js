@@ -2,6 +2,13 @@ const selectDays = document.querySelector('.select-days');
 const selectMonth = document.querySelector('.select-month')
 const selectYears = document.querySelector('.select-years')
 
+const button = document.querySelector('.content__wrapper--button')
+const animate = document.getElementsByTagName('loler');
+console.log('animate', animate)
+button.addEventListener('click', () => {
+  animate.id = 'an'
+})
+
 
 const year = [
   {
