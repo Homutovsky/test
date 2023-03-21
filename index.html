@@ -18,6 +18,10 @@
       <p class="side__block--text">Sign up</p>
     </div>
     <div class="content__block">
+      <div class="content__block--block">
+        <img class="content__block--block-img" src="image/background.svg" alt="">
+      </div>
+
       <div class="content__background">
         <div class="content__justify">
           <div class="content__info">
@@ -29,13 +33,13 @@
               <p class="content__wrapper--text">
                 First Name
               </p>
-              <input class="content__wrapper--input" type="text">
+              <input class="content__wrapper--input first__name" type="text">
             </div>
             <div class="content__wrapper--blocks">
               <p class="content__wrapper--text">
                 Last Name
               </p>
-              <input class="content__wrapper--input" type="text">
+              <input class="content__wrapper--input last__name" type="text">
             </div>
           </div>
           <div class="content__wrapper">
@@ -43,13 +47,14 @@
               <p class="content__wrapper--text">
                 Nationality
               </p>
-              <input class="content__wrapper--input" type="text">
+              <select class="select-countries">
+              </select>
             </div>
             <div class="content__wrapper--blocks">
               <p class="content__wrapper--text">
                 E-mail
               </p>
-              <input class="content__wrapper--input" type="text">
+              <input class="content__wrapper--input email" type="text">
             </div>
           </div>
           <div class="content__wrapper">
@@ -57,7 +62,7 @@
               <p class="content__wrapper--text">
                 Date of Birth
               </p>
-    
+
               <div class="content__wrapper--wrapper">
                 <select class="select-days">
                 </select>
@@ -66,26 +71,24 @@
                 <select class="select-years">
                 </select>
               </div>
-    
+
             </div>
             <div class="content__wrapper--blocks">
               <p class="content__wrapper--text">
                 Gender
               </p>
-              
-              <div class="content__wrapper--wrapper">
+
+              <div class="content__wrapper--wrapper gender">
                 <div class="content__wrapper--radio">
-                  <input type="radio" id="genderChose1"
-                  name="contact" value="email">
+                  <input class="male" type="radio" id="genderChose1" name="contact" value="email">
                   <label for="genderChose1">Male</label>
                 </div>
                 <div class="content__wrapper--radio">
-                  <input type="radio" id="genderChose2"
-                  name="contact" value="phone">
+                  <input class="female" type="radio" id="genderChose2" name="contact" value="phone">
                   <label for="genderChose2">Female</label>
                 </div>
               </div>
-    
+
             </div>
           </div>
           <div class="content__wrapper">
@@ -93,13 +96,13 @@
               <p class="content__wrapper--text">
                 Password
               </p>
-              <input class="content__wrapper--input" type="text">
+              <input class="content__wrapper--input password" type="text">
             </div>
             <div class="content__wrapper--blocks">
               <p class="content__wrapper--text">
                 Confirm Password
               </p>
-              <input class="content__wrapper--input" type="text">
+              <input class="content__wrapper--input confirm" type="text">
             </div>
           </div>
         </div>
@@ -111,7 +114,7 @@
           <button class="content__wrapper--button">Complete Signup</button>
         </div>
       </div>
-      
+
     </div>
   </div>
 
