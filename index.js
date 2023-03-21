@@ -4,12 +4,14 @@ const selectYears = document.querySelector('.select-years');
 const selectCountries = document.querySelector('.select-countries')
 const email = document.querySelector('.email')
 const password = document.querySelector('.password')
-const confirmPassword = document.querySelector('.confirm')
+const confirmPassword = document.querySelector('.confirmPassword')
 const firstName = document.querySelector('.first__name')
 const lastName = document.querySelector('.last__name')
 const male = document.querySelector('.male')
 const female = document.querySelector('.female')
 const finishReg = document.querySelector('.content__justify')
+const img = document.querySelector('.content__block--block-img')
+
 
 const year = [
   {
@@ -153,11 +155,25 @@ selectYears.addEventListener('click', () => {
   }
 })
 
+let ChangeInput = (HTMLel) => {
+  HTMLel.addEventListener('change', () => {
+    HTMLel.className = `content__wrapper--input ${HTMLel}`;
+  })
+}
+
 let emailCheked;
 email.addEventListener('change', () => {
   email.className = 'content__wrapper--input email';
   emailCheked = false;
 })
+
+ChangeInput(firstName);
+ChangeInput(lastName);
+ChangeInput(selectCountries);
+ChangeInput(selectDays);
+ChangeInput(selectMonth);
+ChangeInput(selectYears);
+
 password.addEventListener('change', () => {
   password.className = 'content__wrapper--input password'
   confirmPassword.className = 'content__wrapper--input confirm'
@@ -166,30 +182,6 @@ password.addEventListener('change', () => {
 confirmPassword.addEventListener('change', () => {
   password.className = 'content__wrapper--input password'
   confirmPassword.className = 'content__wrapper--input confirm'
-})
-
-firstName.addEventListener('change', () => {
-  firstName.className = 'content__wrapper--input firstName'
-})
-
-lastName.addEventListener('change', () => {
-  lastName.className = 'content__wrapper--input lastName'
-})
-
-selectCountries.addEventListener('change', () => {
-  selectCountries.className = 'select-countries'
-})
-
-selectDays.addEventListener('change', () => {
-  selectDays.className = 'select-days'
-})
-
-selectMonth.addEventListener('change', () => {
-  selectMonth.className = 'select-month'
-})
-
-selectYears.addEventListener('change', () => {
-  selectYears.className = 'select-years'
 })
 
 let checked1;
@@ -204,63 +196,42 @@ female.addEventListener('click', () => {
 
 const button = document.querySelector('.content__wrapper--button')
 button.addEventListener('click', () => {
-  if ((![email.value][0].includes('@mail.'))) {
+  if ((![email.value][0].includes('@' && '.' && ('ru' || 'com')))) {
     email.className = 'error'
   } else {
     emailCheked = true;
   }
 
-  if (!firstName.value) {
-    firstName.className = 'error'
+  const funcError = (HTMLel) => {
+    if (!HTMLel.value) {
+      HTMLel.className = 'error'
+    }
   }
-
-  if (!lastName.value) {
-    lastName.className = 'error'
-  }
-
-  if (!selectCountries.value) {
-    selectCountries.className = 'error'
-  }
-
-  if (!selectDays.value) {
-    selectDays.className = 'error'
-  }
-
-  if (!selectMonth.value) {
-    selectMonth.className = 'error'
-  }
-
-  if (!selectYears.value) {
-    selectYears.className = 'error'
-  }
-
-  if (!password.value) {
-    password.className = 'error'
-  }
-
-  if (!confirmPassword.value) {
-    confirmPassword.className = 'error'
-  }
-
-
-  if (password.value !== confirmPassword.value) {
-    password.className = 'error'
-    confirmPassword.className = 'error'
-  }
+  funcError(firstName)
+  funcError(lastName)
+  funcError(selectCountries)
+  funcError(selectDays)
+  funcError(selectMonth)
+  funcError(selectYears)
+  funcError(password)
+  funcError(confirmPassword)
 
   if (firstName.value && lastName.value && selectCountries.value && email.value && selectDays.value && selectMonth.value && selectYears.value && (checked1 || checked2) && password.value && (password.value === confirmPassword.value && emailCheked)) {
     [...finishReg.children].forEach(el => el.remove())
+    img.remove()
 
+    const block = document.createElement('div');
     const thank = document.createElement('h1');
     const registered = document.createElement('p');
 
+    block.className = 'finishReg__block'
     thank.textContent = 'Thank You';
     thank.className = 'registered__h1';
     registered.textContent = 'you registered'
     registered.className = 'registered__p';
-
-    finishReg.append(thank, registered)
+    
+    block.append(thank, registered)
+    finishReg.append(block)
   }
-
 })
 
